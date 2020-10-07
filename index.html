@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do It Now</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg" href="favIncon.svg">
+</head>
+
+<body>
+    <div class="app">
+        <div class="time">
+            <h3>
+                <span class="day"></span>
+                <br>
+                <span class="fullData"></span>
+            </h3>
+            <h1 class="godzina"></h1>
+        </div>
+
+        <div class="add">
+            <input class="add__input" type="text" placeholder="Add new task">
+            <button class="add__button">+</button>
+        </div>
+
+        <div class="optionsBar">
+            <input class="search" type="text" placeholder="Search">
+
+            <select class="selectpicker">
+                <option selected>Show all</option>
+                <option>Completed</option>
+                <option>Uncompleted</option>
+            </select>
+
+        </div>
+
+        <div class="pending"></div>
+
+        <ul class="tasklist">
+
+        </ul>
+
+        <div class="settings">
+            <input class="fileName" type="text" placeholder="File name">
+            <a class="saveAs">Save As Txt</a> 
+            <a href="#" class="clearAll">Clear All</a>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
+    <script src="js/date.js"></script>
+    <script src="js/new.js"></script>
+</body>
+
+</html>

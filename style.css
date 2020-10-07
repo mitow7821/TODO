@@ -1,0 +1,185 @@
+@import "checkbox.css";
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(#fc6c48 0%, #ef5081 100%);
+    font-family: 'Open Sans', sans-serif;
+    overflow: hidden;
+}
+
+.app {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(240, 240, 240);
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px .5px #444;
+    width: 400px;
+    height: 500px;
+    overflow: scroll;
+}
+
+.app::-webkit-scrollbar {
+    display: none;
+}
+
+.time {
+    display: flex;
+    justify-content: space-between;
+}
+
+h3, h1 {
+    color: #f65c65;
+    padding: 30px;
+}
+
+.add, .optionsBar, .task, .pending {
+    position: relative;
+    width: 84%;
+    margin: 15px auto;
+}
+
+.add {
+    display: grid;
+    grid-template-columns: 75% 25%;
+}
+
+.add__input, .add__button, .search, .selectpicker, .fileName{
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    color: #444;
+}
+
+.add__input {
+    padding: 0 15px;
+    font-size: 1rem;
+}
+
+.add__input::placeholder, .search::placeholder, .fileName::placeholder {
+    color: #bbb;
+}
+
+.add__button {
+    margin-left: 8px;
+    cursor: pointer;
+    background-color: #ddd;
+    color: #fff;
+    font-size: 2rem;
+}
+
+.add__button:hover {
+    background-color: #f65c65;
+}
+
+.optionsBar {
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+
+.search {
+    padding: 8px 15px;
+    font-size: .9rem;
+    margin-right: 8px;
+}
+
+.pending {
+    color: #333;
+}
+
+.task {
+    padding: 10px 15px;
+    border-radius: 3px;
+    background-color: #ddd;
+    color: #444;
+}
+
+.delete {
+    position: absolute;
+    height: 100%;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+    opacity: 0;
+    width: 0;
+    background-color: #f65c65;
+    color: #fff;
+    transition: all ease-in .2s;
+    border-radius: 2px;
+}
+
+.delete::after {
+    position: absolute;
+    content: '';
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    left: 50%;
+    background-image: url(trash.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transform: translate(-50%, -50%) scale(.5);
+    transition: all ease-in .2s;
+}
+
+.task:hover>.delete {
+    width: 43px;
+    opacity: 1;
+}
+
+.options {
+    position: absolute;
+    bottom: 3%;
+    width: 100%;
+    text-align: center;
+}
+
+.moreOptions {
+    position: relative;
+    margin: 20px 0 15px;
+    width: 100%;
+    text-align: center;
+}
+
+a {
+    font-size: .95rem;
+    color: #555;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 0 10px;
+    position: relative;
+}
+
+a:hover {
+    color: #333;
+    cursor: pointer;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    left: 0;
+    display: block;
+    height: 2px;
+    background-color: #f65c65;
+    width: 0%;
+    transition: width .3s ease-in-out;
+}
+
+a:hover::after {
+    width: 100%;
+}
+.fileName{
+    width: 40%;
+    padding: 5px;
+}
